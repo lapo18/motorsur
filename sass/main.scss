@@ -1,7 +1,10 @@
 
 
 @import '../node_modules/bootstrap/scss/bootstrap';
-.scrollspy-example-2 {
-    height: calc(100vh - 66px);
+.scrollspy-example {
+    height: calc(60vh - 66px);
     overflow-y: scroll;
+}
+.navbar-brand img{
+    max-width: 160px;
 }
