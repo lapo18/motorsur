@@ -8,3 +8,9 @@
 .navbar-brand img{
     max-width: 160px;
 }
+video{
+    object-fit: cover;
+}
+.video-wrapper{
+    height: calc(100vh - 64px);
+}
