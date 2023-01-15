@@ -8,11 +8,14 @@
 .navbar-brand img{
     max-width: 160px;
 }
-.main-wrapper{
-    height: calc(100vh - 64px);
+.col.main-buttons{
+    height: calc(25vh - 64px);
+}
+.carousel-inner{
+    height: 75vh;
 }
 .carousel-item{
-    height: 75vh;
+    height: 100%;
 }
 .carousel-item img {
     object-fit: cover;
