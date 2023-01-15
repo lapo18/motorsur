@@ -1,6 +1,9 @@
 
 
 @import '../node_modules/bootstrap/scss/bootstrap';
+body {
+    padding-top: 4rem;
+}
 .scrollspy-example {
     height: calc(100vh - 66px);
     overflow-y: scroll;
@@ -8,8 +11,8 @@
 .navbar-brand img{
     max-width: 160px;
 }
-.col.main-buttons{
-    height: calc(25vh - 64px);
+.main-button{
+    height: 7.5rem;
 }
 .carousel-inner{
     height: 75vh;
@@ -26,7 +29,4 @@ video{
 }
 .video-wrapper{
     height: calc(100vh - 64px);
-}
-.test-row{
-    height: 20vh;
 }
