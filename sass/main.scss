@@ -8,9 +8,22 @@
 .navbar-brand img{
     max-width: 160px;
 }
+.main-wrapper{
+    height: calc(100vh - 64px);
+}
+.carousel-item{
+    height: 75vh;
+}
+.carousel-item img {
+    object-fit: cover;
+    object-position: center;
+}
 video{
     object-fit: cover;
 }
 .video-wrapper{
     height: calc(100vh - 64px);
+}
+.test-row{
+    height: 20vh;
 }
