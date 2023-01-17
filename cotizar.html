@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/main.min.css">
+<link rel="stylesheet" href="/styles.css">
+<title>Motor Sur</title>
+</head>
+<body>
+   <header>
+      <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+         <div class="container-fluid">
+         <a class="navbar-brand" href="/index.html"><img class="navbar-brand" src="/assets/img/logo.png" alt=""></a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
+         <ul class="navbar-nav text-center">
+         <li class="nav-item ">
+               <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+         </li>
+         <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Marcas
+               </a>
+               <ul class="dropdown-menu dropdown-menu-dark text-center">
+               <li><a class="dropdown-item" href="#">Kia</a></li>
+               <li><a class="dropdown-item" href="#">Cherry</a></li>
+               <li><a class="dropdown-item" href="/peugeot_cat.html">Peugeot</a></li>
+               <li><a class="dropdown-item" href="#">MG</a></li>
+               <li><a class="dropdown-item" href="#">JMC</a></li>
+               </ul>
+         </li>
+         <li class="nav-item">
+               <a class="nav-link" href="/empresa.html">Empresa</a>
+         </li>
+         <li class="nav-item">
+               <a class="nav-link" href="#">Promociones</a>
+         </li>
+         <li class="nav-item">
+               <a class="nav-link " href="#">Cotizar Aqui</a>
+         </li>
+         <li class="nav-item ms-lg-5">
+               <a class="btn btn-outline-success" href="#">Reserva tu cita 054-383101</a>
+         </li>
+         </ul>
+         </div>
+         </div>
+      </nav>
+   </header>
+   <main>
+      <div class="container py-5">
+         <div class="card">
+            <div class="form-group card-header bg-dark text-white text-center">
+                <h3>Cotiza tu Auto</h3>
+            </div>
+            <div class="card-body">
+                <form action="/" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">
+                            <span class="badge badge-light">Nombre Completo</span>
+                        </label>
+                        <input type="text" class="form-control bg-dark text-light" name="nombre" id="nombre" required="true">
+                    </div>
+
+                    <div class="row ">
+                        <div class="form-group  col-lg-3 col-sm-3 ">
+                            <label for="doc">
+                                <span class="badge badge-light">Tipo Documento</span>
+                            </label>
+                            <select name="doc" class="form-control bg-dark text-light" id="doc">
+                                <option>DNI</option>
+                                <option>CE</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-lg-4 col-sm-4 ">
+                            <label for="num">
+                                <span class="badge badge-light">Numero Documento</span>
+                            </label>
+                            <input type="text" class="form-control bg-dark text-light" name="dni" id="num" required="true">
+                        </div>
+                        <div class="form-group col-lg-5 col-sm-5 ">
+                            <label for="cel">
+                                <span class="badge badge-light">Numero de Contacto</span>
+                            </label>
+                            <input type="text" class="form-control bg-dark text-light" name="cel" id="cel" placeholder="Celular/Telefono" required="true">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-6 col-sm-6">
+                            <label for="correo">
+                                <span class="badge badge-light">Correo Electronico</span>
+                            </label>
+                            <input type="email" class="form-control bg-dark text-light" name="email" id="correo" placeholder="jorge@ejemplo.com" required="true">
+                        </div>
+
+
+                        <div class=" col-lg-6 col-sm-6">
+
+                            <label for="cosa">
+                                <span class="badge badge-light">Marca de Vehiculo</span>
+                            </label>
+                            <select name="cosa" class="form-control bg-dark text-light" id="cosa" onchange="cambiar()" required="true">
+
+                                <option value="0" selected="">MARCA</option>
+                                <option value="1">KIA</option>
+                                <option value="2">CHERY</option>
+                                <option value="3">PEUGEOT</option>
+                                <option value="4">MG</option>
+                                <option value="5">JMC</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-lg-6 col-sm-6">
+                            <label for="opt">
+                                <span class="badge badge-light">Modelo de Vehiculo</span>
+                            </label>
+                            <select name="opt" class="form-control bg-dark text-light" id="opt" required="true">
+                                <option selected="">-</option>
+                                <option value="-">Seleccione un Marca Primero</option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="col-lg-6  col-sm-6 ">
+                            <label for="sucursal">
+                                <span class="badge badge-light">Selecciona tu Tienda mas Cercana</span>
+                            </label>
+                            <select name="sucursal" class="form-control bg-dark text-light" id="sucursal">
+                                <option selected="">AREQUIPA - Av. Aviacion KM 7 Cerro C.</option>
+                                <option>Seleccione una Marca para ver las Opciones</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-lg-6 col-sm-6">
+                            <label for="departamentoCliente">
+                                <span class="badge badge-light">Selecciona tu Ciudad</span>
+                            </label>
+                            <select class="form-control bg-dark text-light" name="departamentoCliente" id="departamentoCliente" required="true">
+
+                                <option></option>
+
+                                <option>Amazonas</option>
+
+                                <option>Ancash</option>
+
+
+                                <option>Apurimac</option>
+
+
+                                <option>Arequipa</option>
+
+
+                                <option>Ayacucho</option>
+
+
+                                <option>Cajamarca</option>
+
+
+                                <option>Callao</option>
+
+
+                                <option>Cusco</option>
+
+
+                                <option>Huancavelica</option>
+
+
+                                <option>Huanuco</option>
+
+
+                                <option>Ica</option>
+
+
+                                <option>Junín</option>
+                                <option>La Libertad</option>
+                                <option>Lambayeque</option>
+                                <option>Lima</option>
+                                <option>Loreto</option>
+                                <option>Madre De Dios</option>
+                                <option>Moquegua</option>
+                                <option>Pasco</option>
+                                <option>Piura</option>
+                                <option>Puno</option>
+                                <option>San Martin</option>
+                                <option>Tacna</option>
+
+                                <option>Tumbes</option>
+                                <option>Ucayali</option>
+
+                            </select>
+                        </div>
+
+
+
+                        <!--div class="col-lg-6  col-sm-6 ">
+                        <label for="sucursal">
+                            <span class="badge badge-light">Selecciiona tu Tienda mas Cercana</span>
+                        </label>
+                        <select name="sucursal" class="form-control bg-dark text-light" id="sucursal" >
+                            <option selected>AREQUIPA - Av. Aviacion KM 7 Cerro C.</option>
+                            <option>Seleccione una Marca para ver las Opciones</option>
+                            
+                        </select>
+                          </div-->
+                    </div>
+                    <div class="form-group row">
+                        <div class="form-group col-lg-6 col-sm-6">
+                            <label for="tcompra">
+                                <span class="badge badge-light">Tiempo Estimado de Compra</span>
+                            </label>
+                            <select name="tcompra" class="form-control bg-dark text-light" id="tcompra">
+
+                                <option selected="">1 SEMANA</option>
+                                <option>2 SEMANAS</option>
+                                <option>1 MES</option>
+                                <option>2 MESES</option>
+                                <option>3 MESES O MAS</option>
+                            </select>
+                        </div>
+                        <div class=" col-lg-6  col-sm-6 ">
+                            <label for="dfin">
+                                <span class="badge badge-light">¿Desea Financiamiento?</span>
+                            </label>
+                            <select name="dfin" class="form-control bg-dark text-light" id="dfin">
+
+                                <option selected="">NO</option>
+                                <option>SI</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <div class="form-check text-dark">
+                            <input class="form-check-input" type="checkbox" name="checkb" id="invalidCheck2" required="">
+                            <label class="form-check-label small" for="invalidCheck2">
+                                Al enviar mis datos acepto las prolíticas de privacidad
+                                detalladas en el siguiente enlace
+                                <a class="text-info" href="/Politicas_de_Privacidad" target="»_blank»">Políticas de
+                                    Privacidad</a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6 mx-auto">
+                        <button class="btn btn-danger">
+                            <span >COTIZAR VEHICULO</span>
+
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </div>
+   </main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
+
