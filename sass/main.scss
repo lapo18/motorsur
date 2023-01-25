@@ -1,36 +1,47 @@
-
-
 @import '../node_modules/bootstrap/scss/bootstrap';
 body {
-    padding-top: 4rem;
+  padding-top: 4rem;
 }
 .scrollspy-example {
-    height: calc(100vh - 12rem);
-    overflow-y: scroll;
+  height: calc(100vh - 12rem);
+  overflow-y: scroll;
 }
-.navbar-brand img{
-    max-width: 160px;
+.navbar-brand img {
+  max-width: 160px;
 }
-.test{
-   aspect-ratio: 2/1;
+.test {
+  min-height: 10rem;
+  aspect-ratio: 3 / 1;
 }
-.img-fluid{
-    height: 100%;
+.img-fluid {
+  height: 100%;
 }
-button.nav-link{
-    max-height: 10rem;
+button.nav-link {
+  max-height: 10rem;
 }
-.carousel-item{
-   
-    height: 75vh;
+.carousel-item {
+  height: 75vh;
 }
 .carousel-item img {
-    object-fit: cover;
-    object-position: center;
+  object-fit: cover;
+  object-position: center;
 }
-video{
-    object-fit: cover;
+video {
+  object-fit: cover;
 }
-.video-wrapper{
-    height: calc(100vh - 64px);
+.video-wrapper {
+  height: calc(100vh - 64px);
+}
+.filterDiv {
+  /* float: left;
+  background-color: #2196f3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px; */
+  display: none; /* Hidden by default */
+}
+.show {
+  display: block;
 }

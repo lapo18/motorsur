@@ -1,132 +1,862 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/main.min.css">
-<link rel="stylesheet" href="/styles.css">
-<title>Motor Sur</title>
-</head>
-<body>
-<header>
-    <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="/css/main.min.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Motor Sur</title>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark"
+      >
         <div class="container-fluid">
-        <a class="navbar-brand" href="/index.html"><img class="navbar-brand" src="/assets/img/logo.png" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
-        <ul class="navbar-nav text-center">
-        <li class="nav-item ">
-            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Marcas
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark text-center">
-            <li><a class="dropdown-item" href="#">Kia</a></li>
-            <li><a class="dropdown-item" href="#">Cherry</a></li>
-            <li><a class="dropdown-item" href="/peugeot_cat.html">Peugeot</a></li>
-            <li><a class="dropdown-item" href="#">MG</a></li>
-            <li><a class="dropdown-item" href="#">JMC</a></li>
+          <a class="navbar-brand" href="/index.html"
+            ><img
+              class="navbar-brand"
+              src="/assets/img/logo.png"
+              alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDarkDropdown"
+            aria-controls="navbarNavDarkDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNavDarkDropdown"
+          >
+            <ul class="navbar-nav text-center">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Marcas
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-dark text-center"
+                >
+                  <li><a class="dropdown-item" href="#">Kia</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Cherry</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/peugeot_cat.html"
+                      >Peugeot</a
+                    >
+                  </li>
+                  <li><a class="dropdown-item" href="#">MG</a></li>
+                  <li><a class="dropdown-item" href="#">JMC</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/empresa.html">Empresa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Promociones</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cotizar Aqui</a>
+              </li>
+              <li class="nav-item ms-lg-5">
+                <a class="btn btn-outline-success" href="#"
+                  >Reserva tu cita 054-383101</a
+                >
+              </li>
             </ul>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/empresa.html">Empresa</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Promociones</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link " href="#">Cotizar Aqui</a>
-        </li>
-        <li class="nav-item ms-lg-5">
-            <a class="btn btn-outline-success" href="#">Reserva tu cita 054-383101</a>
-        </li>
-        </ul>
+          </div>
         </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container py-3">
+        <div class="dropdown">
+          <button
+            class="btn btn-secondary dropdown-toggle w-100"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Todos
+          </button>
+          <ul
+            id="myBtnContainer"
+            class="w-100 dropdown-menu text-center"
+          >
+            <li>
+              <button
+                class="dropdown-item"
+                onclick="filterSelection('all')"
+              >
+                Todos
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                onclick="filterSelection('cars')"
+              >
+                Sedan
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                onclick="filterSelection('colors')"
+              >
+                HB
+              </button>
+            </li>
+            <li>
+              <button class="dropdown-item">Camioneta Cerrada</button>
+            </li>
+            <li><button class="dropdown-item">Pickup</button></li>
+            <li>
+              <button class="dropdown-item">
+                Vehiculos Comerciales
+              </button>
+            </li>
+          </ul>
         </div>
-    </nav>
-</header>
-<main>
-   <div class="container py-3">
-      <div class="dropdown ">
-         <button class="btn btn-secondary dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Todos
-         </button>
-         <ul class="w-100 dropdown-menu text-center">
-           <li><button class="dropdown-item ">Todos</button></li>
-           <li><button class="dropdown-item">Sedan</button></li>
-           <li><button class="dropdown-item">HB</button></li>
-           <li><button class="dropdown-item">Camioneta Cerrada</button></li>
-           <li><button class="dropdown-item">Pickup</button></li>
-           <li><button class="dropdown-item">Vehiculos Comerciales</button></li>
-         </ul>
-       </div>
-   </div>
-   <div class="filterDiv cars">BMW</div>
-  <div class="filterDiv colors fruits">Orange</div>
-  <div class="filterDiv cars">Volvo</div>
-  <div class="filterDiv colors">Red</div>
-  <div class="filterDiv cars animals">Mustang</div>
-  <div class="filterDiv colors">Blue</div>
-  <div class="filterDiv animals">Cat</div>
-  <div class="filterDiv animals">Dog</div>
-  <div class="filterDiv fruits">Melon</div>
-  <div class="filterDiv fruits animals">Kiwi</div>
-  <div class="filterDiv fruits">Banana</div>
-  <div class="filterDiv fruits">Lemon</div>
-  <div class="filterDiv animals">Cow</div>
-</main>
+        <div class="filterDiv cars">
+          <div class="row">
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
 
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script>
-   filterSelection("all")
-   function filterSelection(c) {
-     var x, i;
-     x = document.getElementsByClassName("filterDiv");
-     if (c == "all") c = "";
-     for (i = 0; i < x.length; i++) {
-       w3RemoveClass(x[i], "show");
-       if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-     }
-   }
-   
-   function w3AddClass(element, name) {
-     var i, arr1, arr2;
-     arr1 = element.className.split(" ");
-     arr2 = name.split(" ");
-     for (i = 0; i < arr2.length; i++) {
-       if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-     }
-   }
-   
-   function w3RemoveClass(element, name) {
-     var i, arr1, arr2;
-     arr1 = element.className.split(" ");
-     arr2 = name.split(" ");
-     for (i = 0; i < arr2.length; i++) {
-       while (arr1.indexOf(arr2[i]) > -1) {
-         arr1.splice(arr1.indexOf(arr2[i]), 1);     
-       }
-     }
-     element.className = arr1.join(" ");
-   }
-   
-   // Add active class to the current button (highlight it)
-   var btnContainer = document.getElementById("myBtnContainer");
-   var btns = btnContainer.getElementsByClassName("btn");
-   for (var i = 0; i < btns.length; i++) {
-     btns[i].addEventListener("click", function(){
-       var current = document.getElementsByClassName("active");
-       current[0].className = current[0].className.replace(" active", "");
-       this.className += " active";
-     });
-   }
-   </script>       
-</body>
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filterDiv colors fruits">
+          <div class="row">
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filterDiv cars">
+          <div class="row">
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filterDiv colors">
+          <div class="row">
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filterDiv cars animals">
+          <div class="row">
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
+              <div class="card text-black">
+                <img
+                  src="/assets/img/peugeot/2008-premium-1PP1SYPNP1B0A0B0_0MM60NSM_0PA80RFX_001.png"
+                  class="card-img-top"
+                  alt="iPhone"
+                />
+                <div class="card-body">
+                  <div class="text-center mt-1">
+                    <h4 class="card-title">New Suv 2008</h4>
+                    <h6 class="text-primary mb-1 pb-3">
+                      Starting at $399
+                    </h6>
+                  </div>
+
+                  <div class="text-center">
+                    <div
+                      class="p-3 mx-n3 mb-4"
+                      style="background-color: #eff1f2"
+                    >
+                      <h5 class="mb-0">Cotizame</h5>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row">
+                    <button
+                      type="button"
+                      class="btn btn-primary flex-fill me-1"
+                      data-mdb-ripple-color="dark"
+                    >
+                      Ver mas
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger flex-fill ms-1"
+                    >
+                      Catalogo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  <div class="filterDiv colors">Blue</div>
+      <div class="filterDiv animals">Cat</div>
+      <div class="filterDiv animals">Dog</div>
+      <div class="filterDiv fruits">Melon</div>
+      <div class="filterDiv fruits animals">Kiwi</div>
+      <div class="filterDiv fruits">Banana</div>
+      <div class="filterDiv fruits">Lemon</div>
+      <div class="filterDiv animals">Cow</div> -->
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      filterSelection('all')
+      function filterSelection(c) {
+        var x, i
+        x = document.getElementsByClassName('filterDiv')
+        if (c == 'all') c = ''
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], 'show')
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], 'show')
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2
+        arr1 = element.className.split(' ')
+        arr2 = name.split(' ')
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += ' ' + arr2[i]
+          }
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2
+        arr1 = element.className.split(' ')
+        arr2 = name.split(' ')
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1)
+          }
+        }
+        element.className = arr1.join(' ')
+      }
+
+      // Add active class to the current button (highlight it)
+      var btnContainer = document.getElementById('myBtnContainer')
+      var btns = btnContainer.getElementsByClassName('btn')
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener('click', function () {
+          var current = document.getElementsByClassName('active')
+          current[0].className = current[0].className.replace(
+            ' active',
+            ''
+          )
+          this.className += ' active'
+        })
+      }
+    </script>
+  </body>
 </html>
-
