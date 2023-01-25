@@ -100,6 +100,7 @@
             type="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
+            id="dropdownMenu1"
           >
             Todos
           </button>
@@ -110,7 +111,7 @@
             <li>
               <button
                 class="dropdown-item"
-                onclick="filterSelection('all')"
+                onclick="filterSelection('all',this)"
               >
                 Todos
               </button>
@@ -118,7 +119,7 @@
             <li>
               <button
                 class="dropdown-item"
-                onclick="filterSelection('cars')"
+                onclick="filterSelection('sedan',this)"
               >
                 Sedan
               </button>
@@ -126,23 +127,38 @@
             <li>
               <button
                 class="dropdown-item"
-                onclick="filterSelection('colors')"
+                onclick="filterSelection('hb',this)"
               >
                 HB
               </button>
             </li>
             <li>
-              <button class="dropdown-item">Camioneta Cerrada</button>
+              <button
+                class="dropdown-item"
+                onclick="filterSelection('c-cerrada')"
+              >
+                Camioneta Cerrada
+              </button>
             </li>
-            <li><button class="dropdown-item">Pickup</button></li>
             <li>
-              <button class="dropdown-item">
+              <button
+                class="dropdown-item"
+                onclick="filterSelection('pickup')"
+              >
+                Pickup
+              </button>
+            </li>
+            <li>
+              <button
+                class="dropdown-item"
+                onclick="filterSelection('v-comerciales')"
+              >
                 Vehiculos Comerciales
               </button>
             </li>
           </ul>
         </div>
-        <div class="filterDiv cars">
+        <div class="filterDiv sedan show">
           <div class="row">
             <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
               <div class="card text-black">
@@ -272,7 +288,7 @@
             </div>
           </div>
         </div>
-        <div class="filterDiv colors fruits">
+        <div class="filterDiv hb show">
           <div class="row">
             <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
               <div class="card text-black">
@@ -402,7 +418,7 @@
             </div>
           </div>
         </div>
-        <div class="filterDiv cars">
+        <div class="filterDiv c-cerrada show">
           <div class="row">
             <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
               <div class="card text-black">
@@ -532,7 +548,7 @@
             </div>
           </div>
         </div>
-        <div class="filterDiv colors">
+        <div class="filterDiv pickup show">
           <div class="row">
             <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
               <div class="card text-black">
@@ -662,7 +678,7 @@
             </div>
           </div>
         </div>
-        <div class="filterDiv cars animals">
+        <div class="filterDiv v-comerciales show">
           <div class="row">
             <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
               <div class="card text-black">
@@ -810,9 +826,11 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      filterSelection('all')
-      function filterSelection(c) {
+      /*       filterSelection('all')
+       */ function filterSelection(c, item) {
         var x, i
+        document.getElementById('dropdownMenu1').innerHTML =
+          item.innerHTML
         x = document.getElementsByClassName('filterDiv')
         if (c == 'all') c = ''
         for (i = 0; i < x.length; i++) {
@@ -846,7 +864,7 @@
 
       // Add active class to the current button (highlight it)
       var btnContainer = document.getElementById('myBtnContainer')
-      var btns = btnContainer.getElementsByClassName('btn')
+      var btns = btnContainer.getElementsByClassName('dropdown-item')
       for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener('click', function () {
           var current = document.getElementsByClassName('active')
